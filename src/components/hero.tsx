@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { WHATSAPP } from "@/lib/festival";
+import { ticketsHref } from "@/lib/festival";
 
 export function Hero() {
   return (
@@ -35,18 +35,18 @@ export function Hero() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href="#talleres"
-              className="rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
-            >
-              Ver talleres
-            </a>
-            <a
-              href={WHATSAPP.primary.href}
+              href={ticketsHref()}
               target="_blank"
               rel="noreferrer"
+              className="rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
+            >
+              Comprar entradas
+            </a>
+            <a
+              href="#talleres"
               className="rounded-sm border-2 border-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] hover:bg-navy hover:text-cream"
             >
-              WhatsApp {WHATSAPP.primary.display}
+              Ver talleres
             </a>
           </div>
         </div>

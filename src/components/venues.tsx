@@ -38,6 +38,14 @@ export function Venues() {
             <p className="mt-1 text-sm text-cream/85">
               Cra 20 #70-19 · Ensayos y talleres montaje.
             </p>
+            <a
+              href="https://www.instagram.com/lagatacirko/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3 inline-block text-sm underline decoration-gold underline-offset-4 hover:text-gold"
+            >
+              @lagatacirko
+            </a>
           </article>
         </div>
       </div>

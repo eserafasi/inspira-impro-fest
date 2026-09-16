@@ -7,7 +7,32 @@ export const WHATSAPP = {
     display: "314 402 7704",
     href: "https://wa.me/573144027704?text=Hola%2C%20quiero%20info%20del%20taller%20People%20you%20know",
   },
+  tickets: {
+    display: "320 992 3756",
+    phone: "573209923756",
+  },
 } as const;
+
+export const SOCIAL = [
+  {
+    name: "Proyecto Cocoloco",
+    handle: "@proyectococoloco",
+    href: "https://www.instagram.com/proyectococoloco/",
+  },
+  {
+    name: "La Gata Cirko",
+    handle: "@lagatacirko",
+    href: "https://www.instagram.com/lagatacirko/",
+  },
+] as const;
+
+export function ticketsHref(show?: { title: string; day: string }) {
+  const text = show
+    ? `Quiero comprar entradas para ${show.title} — ${show.day} del Inspira Impro Fest 2`
+    : "Quiero comprar entradas para los shows del Inspira Impro Fest 2";
+
+  return `https://wa.me/${WHATSAPP.tickets.phone}?text=${encodeURIComponent(text)}`;
+}
 
 export const SHOWS = [
   {
