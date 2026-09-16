@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #0c1c2e;
+  --navy-deep: #071320;
+  --ink: #101820;
+  --cream: #f3e6c8;
+  --cream-soft: #f7edd8;
+  --gold: #c9a24a;
+  --gold-deep: #b8892e;
+  --teal: #3d6e68;
+  --teal-deep: #2b5550;
+  --purple: #6b5478;
+  --mauve: #8a6d8a;
+  --paper: #f4ead4;
+}
+
+@theme inline {
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-ink: var(--ink);
+  --color-cream: var(--cream);
+  --color-cream-soft: var(--cream-soft);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-teal: var(--teal);
+  --color-teal-deep: var(--teal-deep);
+  --color-purple: var(--purple);
+  --color-mauve: var(--mauve);
+  --color-paper: var(--paper);
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: "Outfit", "Outfit Fallback", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-oswald), "Oswald", ui-sans-serif, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.font-script {
+  font-family: var(--font-caveat), "Caveat", cursive;
+}
+
+.sunburst {
+  background:
+    repeating-conic-gradient(
+      from 0deg at 50% 42%,
+      #3d6e68 0deg 12deg,
+      #c9a24a 12deg 24deg,
+      #6b5478 24deg 36deg,
+      #f3e6c8 36deg 48deg,
+      #8a6d8a 48deg 60deg,
+      #2b5550 60deg 72deg
+    );
+}
+
+.sunburst-gold {
+  background: repeating-conic-gradient(
+    from 90deg at 50% -10%,
+    #c9a24a 0deg 8deg,
+    #b8892e 8deg 16deg
+  );
+}
+
+.sunburst-blue {
+  background: repeating-conic-gradient(
+    from 90deg at 50% -10%,
+    #3a6d8c 0deg 8deg,
+    #2c5570 8deg 16deg
+  );
+}
+
+.sunburst-navy {
+  background: repeating-conic-gradient(
+    from 90deg at 50% -10%,
+    #17324a 0deg 8deg,
+    #0c1c2e 8deg 16deg
+  );
+}
+
+.argyle {
+  background-color: #3d6e68;
+  background-image:
+    linear-gradient(60deg, #6b5478 25%, transparent 25.5%, transparent 75%, #6b5478 75%),
+    linear-gradient(120deg, #c9a24a 25%, transparent 25.5%, transparent 75%, #c9a24a 75%),
+    linear-gradient(60deg, #2b5550 25%, transparent 25.5%, transparent 75%, #2b5550 75%),
+    linear-gradient(120deg, #8a6d8a 25%, transparent 25.5%, transparent 75%, #8a6d8a 75%);
+  background-size: 140px 240px;
+  background-position: 0 0, 0 0, 70px 120px, 70px 120px;
+}
+
+.circuit-frame {
+  box-shadow:
+    0 0 0 1px rgba(201, 162, 74, 0.25),
+    inset 0 0 0 1px rgba(243, 230, 200, 0.08);
+}
+
+.title-block {
+  background: #0c1c2e;
+  color: white;
+  border: 3px solid #f3e6c8;
+  box-shadow: 8px 8px 0 #071320;
+}
+
+.inspira-word {
+  font-weight: 700;
+}
+
+.inspira-word span:nth-child(1) {
+  color: #e8d7b0;
+}
+.inspira-word span:nth-child(2) {
+  color: #6b5478;
+}
+.inspira-word span:nth-child(3) {
+  color: #3d6e68;
+}
+.inspira-word span:nth-child(4) {
+  color: #c9a24a;
+}
+.inspira-word span:nth-child(5) {
+  color: #2c4c6e;
+}
+.inspira-word span:nth-child(6) {
+  color: #8a6d8a;
+}
