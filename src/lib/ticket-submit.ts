@@ -2,7 +2,8 @@ import { isAllowedReceiptType, RECEIPT } from "@/lib/ticket";
 
 export type TicketPayload = {
   name: string;
-  idPhone: string;
+  phone: string;
+  document: string;
   email: string;
   website: string;
   receipt: {
@@ -15,7 +16,8 @@ export type TicketPayload = {
 
 export function validateTicketFields(input: {
   name: string;
-  idPhone: string;
+  phone: string;
+  document: string;
   email: string;
   website: string;
 }) {
@@ -24,18 +26,19 @@ export function validateTicketFields(input: {
   }
 
   const name = input.name.trim();
-  const idPhone = input.idPhone.trim();
+  const phone = input.phone.trim();
+  const document = input.document.trim();
   const email = input.email.trim();
 
   if (!name) return { ok: false as const, error: "El nombre es obligatorio." };
-  if (!idPhone) {
-    return { ok: false as const, error: "El documento o teléfono es obligatorio." };
+  if (!phone) {
+    return { ok: false as const, error: "El teléfono es obligatorio." };
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return { ok: false as const, error: "Ingresa un correo electrónico válido." };
   }
 
-  return { ok: true as const, spam: false as const, name, idPhone, email };
+  return { ok: true as const, spam: false as const, name, phone, document, email };
 }
 
 export function validateReceiptMeta(file: {

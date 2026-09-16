@@ -23,28 +23,29 @@ export function Hero() {
           </p>
           <h1 className="mt-3 font-display text-4xl uppercase leading-[0.95] sm:text-6xl">
             Un festival de
-            <span className="block text-gold-deep">improvisación</span>
-            para mirar más adentro
+            <span className="block text-gold-deep">Improvisación</span>
+            para inspirarnos
           </h1>
           <p className="mx-auto mt-5 max-w-md text-base leading-relaxed text-ink/80">
-            Funciones, talleres montaje y un intensivo con Jeff Gladstone
-            (Canadá). En Teatro R101 y Estudio La Gata Cirko.
+            Funciones, talleres montaje e invitados especiales. En Teatro R101
+            y Estudio La Gata Cirko.
           </p>
           <p className="mt-3 text-sm font-medium text-teal-deep">
-            Invitado especial: Jeff Gladstone
+            Invitados especiales: Jeff Gladstone y Viviane Eggers
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a
-              href={ticketsHref()}
-              className="rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
-            >
+            <a href={ticketsHref()} className="cta-star">
               Comprar entradas
             </a>
-            <a
-              href="#talleres"
-              className="rounded-sm border-2 border-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] hover:bg-navy hover:text-cream"
-            >
-              Ver talleres
+            <a href="#invitados" className="cta-eye">
+              <Image
+                src="/brand/ojo.png"
+                alt=""
+                width={28}
+                height={18}
+                className="h-[1.05em] w-auto"
+              />
+              Ver invitados
             </a>
           </div>
         </div>

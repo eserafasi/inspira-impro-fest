@@ -10,6 +10,7 @@ export const WHATSAPP = {
   tickets: {
     display: "320 992 3756",
     phone: "573209923756",
+    href: "https://wa.me/573209923756?text=Hola%2C%20quiero%20comprar%20boletas%20para%20Inspira%20Impro%20Fest%202",
   },
 } as const;
 
@@ -29,6 +30,31 @@ export const SOCIAL = [
 export function ticketsHref(_show?: { title: string; day: string }) {
   return "/entradas";
 }
+
+export function ticketsWhatsAppHref(show?: { title: string; day: string }) {
+  const text = show
+    ? `Hola, quiero comprar boletas para ${show.title} (${show.day}) en Inspira Impro Fest 2`
+    : "Hola, quiero comprar boletas para Inspira Impro Fest 2";
+
+  return `https://wa.me/${WHATSAPP.tickets.phone}?text=${encodeURIComponent(text)}`;
+}
+
+export const GUESTS = [
+  {
+    name: "Jeff Gladstone",
+    origin: "Canadá",
+    role: "Intensivo People you know y dirección en vivo de The Reunion",
+    image: "/brand/jeff.png",
+    imageAlt: "Jeff Gladstone, invitado especial de Inspira Impro Fest 2",
+  },
+  {
+    name: "Viviane Eggers",
+    origin: "Hamburgo",
+    role: "Dirige el taller montaje ¿Listos?",
+    image: "/brand/listos-escena.png",
+    imageAlt: "Viviane Eggers dirige el taller montaje ¿Listos?",
+  },
+] as const;
 
 export const SHOWS = [
   {

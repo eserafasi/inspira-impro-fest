@@ -9,14 +9,6 @@ const TONE: Record<(typeof SHOWS)[number]["tone"], string> = {
   purple: "bg-purple text-cream",
 };
 
-const TICKET_LINK: Record<(typeof SHOWS)[number]["tone"], string> = {
-  navy: "border-cream/40 text-cream hover:bg-cream hover:text-navy",
-  teal: "border-cream/40 text-cream hover:bg-cream hover:text-teal-deep",
-  gold: "border-navy/30 text-navy-deep hover:bg-navy hover:text-cream",
-  cream: "border-navy/30 text-navy hover:bg-navy hover:text-cream",
-  purple: "border-cream/40 text-cream hover:bg-cream hover:text-purple",
-};
-
 export function Lineup() {
   return (
     <section id="funciones" className="scroll-mt-20 bg-cream-soft">
@@ -31,12 +23,6 @@ export function Lineup() {
           Una semana en Bogotá para ver, crear y entrar en escena. Ubicación:
           Teatro R101 y Estudio La Gata Cirko.
         </p>
-        <a
-          href={ticketsHref()}
-          className="mt-6 inline-flex rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
-        >
-          Comprar entradas
-        </a>
         <div className="mt-8 overflow-hidden border-4 border-navy">
           <Image
             src="/brand/cartel-fest.png"
@@ -63,10 +49,7 @@ export function Lineup() {
                 <p className="mt-3 text-sm leading-snug opacity-90">
                   {show.subtitle}
                 </p>
-                <a
-                  href={ticketsHref(show)}
-                  className={`mt-5 inline-flex border px-3 py-2 font-display text-[11px] uppercase tracking-[0.14em] ${TICKET_LINK[show.tone]}`}
-                >
+                <a href={ticketsHref(show)} className="cta-star-sm mt-5">
                   Comprar entradas
                 </a>
               </div>

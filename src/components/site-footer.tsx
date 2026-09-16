@@ -15,8 +15,8 @@ export function SiteFooter() {
           />
           <div>
             <p className="font-display text-xl uppercase">Inspira Impro Fest 2</p>
-            <p className="text-sm text-cream/70">
-              Teatro R101 · Trascena
+            <p className="mt-2 text-sm leading-relaxed text-cream/70">
+              Proyecto Cocoloco · La Gata Cirko · Teatro R101 · Trascena
             </p>
           </div>
         </div>
@@ -48,10 +48,7 @@ export function SiteFooter() {
           <p className="font-display uppercase tracking-widest text-gold">
             Entradas
           </p>
-          <a
-            href={ticketsHref()}
-            className="mt-2 inline-flex rounded-sm bg-gold px-4 py-2 font-display text-xs uppercase tracking-[0.16em] text-navy-deep hover:bg-cream"
-          >
+          <a href={ticketsHref()} className="cta-star mt-2">
             Comprar entradas
           </a>
           <p className="mt-5 font-display uppercase tracking-widest text-gold">
@@ -61,9 +58,9 @@ export function SiteFooter() {
             href={WHATSAPP.primary.href}
             target="_blank"
             rel="noreferrer"
-            className="mt-1 block text-lg hover:text-gold"
+            className="cta-star mt-2"
           >
-            {WHATSAPP.primary.display}
+            Inscríbete a los talleres
           </a>
         </div>
       </div>

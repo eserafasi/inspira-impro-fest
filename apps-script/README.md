@@ -40,7 +40,8 @@ Enter:
 
 ```text
 Name: Test User
-ID / Phone: 3000000000
+Phone: 3000000000
+Document: (optional)
 Email: test@example.com
 Receipt: public/test/test-image.jpg
 ```
@@ -53,7 +54,7 @@ Expected: success message **¡Comprobante recibido!**
 
 Open the Google Sheet → tab **Tickets**.
 
-Expected: a new row with timestamp, name, ID/phone, email, and a Receipt link.
+Expected: a new row with timestamp, name, phone, email, a Receipt link, and document if provided.
 
 ### Test 4 — Receipt
 

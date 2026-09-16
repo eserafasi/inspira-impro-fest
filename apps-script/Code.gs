@@ -19,7 +19,7 @@
  */
 
 var SHEET_NAME = "Tickets";
-var HEADERS = ["Timestamp", "Name", "ID / Phone", "Email", "Receipt", "Checked"];
+var HEADERS = ["Timestamp", "Name", "Phone", "Email", "Receipt", "Checked", "Document"];
 
 function doGet() {
   return json_({ ok: true, service: "tickets" });
@@ -34,13 +34,14 @@ function doPost(e) {
     }
 
     var name = String(data.name || "").trim();
-    var idPhone = String(data.idPhone || "").trim();
+    var phone = String(data.phone || data.idPhone || "").trim();
+    var documentId = String(data.document || "").trim();
     var email = String(data.email || "").trim();
     var mimeType = String(data.mimeType || "");
     var base64 = String(data.receiptBase64 || "");
     var fileName = String(data.fileName || "comprobante.jpg");
 
-    if (!name || !idPhone || !email || !base64) {
+    if (!name || !phone || !email || !base64) {
       return json_({ ok: false, error: "Missing required fields." });
     }
 
@@ -70,7 +71,7 @@ function doPost(e) {
       "dd/MM/yyyy HH:mm"
     );
 
-    sheet.appendRow([timestamp, name, idPhone, email, "", false]);
+    sheet.appendRow([timestamp, name, phone, email, "", false, documentId]);
     var row = sheet.getLastRow();
     sheet.getRange(row, 5).setRichTextValue(
       SpreadsheetApp.newRichTextValue()
@@ -118,6 +119,8 @@ function getTicketsSheet_() {
     sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
     sheet.getRange(1, 1, 1, HEADERS.length).setFontWeight("bold");
     sheet.setFrozenRows(1);
+  } else if (String(sheet.getRange(1, 7).getValue()) === "") {
+    sheet.getRange(1, 7).setValue("Document").setFontWeight("bold");
   }
   return sheet;
 }

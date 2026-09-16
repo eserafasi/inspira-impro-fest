@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CopyPaymentButton } from "@/components/copy-payment-button";
 import { TicketForm } from "@/components/ticket-form";
+import { ticketsWhatsAppHref } from "@/lib/festival";
 import {
   EVENT,
   PAYMENT,
@@ -85,6 +86,20 @@ export default function TicketsPage() {
             <TicketForm />
           </div>
         </section>
+
+        <div className="grid justify-items-center gap-2">
+          <p className="font-display text-base lowercase leading-none text-ink/70">
+            o
+          </p>
+          <a
+            href={ticketsWhatsAppHref()}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center rounded-sm bg-[#25D366] px-4 py-2 font-display text-[11px] uppercase tracking-[0.12em] text-white hover:bg-[#128C7E]"
+          >
+            Comprar por WhatsApp
+          </a>
+        </div>
       </div>
     </main>
   );

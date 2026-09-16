@@ -14,7 +14,8 @@ export async function POST(request: Request) {
   }
   const fields = validateTicketFields({
     name: String(form.get("name") ?? ""),
-    idPhone: String(form.get("idPhone") ?? ""),
+    phone: String(form.get("phone") ?? ""),
+    document: String(form.get("document") ?? ""),
     email: String(form.get("email") ?? ""),
     website: String(form.get("website") ?? ""),
   });
@@ -58,7 +59,9 @@ export async function POST(request: Request) {
   const buffer = Buffer.from(await receipt.arrayBuffer());
   const payload = JSON.stringify({
     name: fields.name,
-    idPhone: fields.idPhone,
+    phone: fields.phone,
+    document: fields.document,
+    idPhone: fields.phone,
     email: fields.email,
     website: "",
     fileName: receipt.name,

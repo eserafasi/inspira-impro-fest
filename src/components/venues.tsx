@@ -5,13 +5,6 @@ export function Venues() {
     <section id="festival" className="scroll-mt-20 bg-cream">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 md:grid-cols-2">
         <div>
-          <Image
-            src="/brand/ensambles.jpg"
-            alt="Talleres montaje Inspira: Con-tacto y ¿Listo?"
-            width={900}
-            height={1100}
-            className="mb-8 w-full border-2 border-navy object-cover"
-          />
           <p className="font-display text-sm uppercase tracking-[0.3em] text-teal-deep">
             Bogotá 2026
           </p>

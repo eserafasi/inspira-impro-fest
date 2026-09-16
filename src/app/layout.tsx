@@ -21,11 +21,11 @@ const caveat = Caveat({
 export const metadata: Metadata = {
   title: "Inspira Impro Fest 2 · Bogotá 11–18 de octubre",
   description:
-    "Festival de improvisación en Bogotá. Funciones, talleres montaje con Viviane Eggers y Marisol Correa, e intensivo con Jeff Gladstone. Teatro R101 y Estudio La Gata Cirko.",
+    "Un festival de Improvisación para inspirarnos. Funciones, talleres montaje e invitados especiales Jeff Gladstone y Viviane Eggers. Teatro R101 y Estudio La Gata Cirko.",
   openGraph: {
     title: "Inspira Impro Fest 2",
     description:
-      "Bogotá 11–18 de octubre. Invitado especial: Jeff Gladstone (Canadá).",
+      "Bogotá 11–18 de octubre. Invitados especiales: Jeff Gladstone y Viviane Eggers.",
     images: ["/brand/cartel-fest.png"],
   },
 };

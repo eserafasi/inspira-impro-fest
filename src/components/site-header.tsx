@@ -9,7 +9,7 @@ import { ticketsHref } from "@/lib/festival";
 const LINKS = [
   { href: "/#funciones", id: "funciones", label: "Funciones" },
   { href: "/#talleres", id: "talleres", label: "Talleres" },
-  { href: "/#invitado", id: "invitado", label: "Invitado" },
+  { href: "/#invitados", id: "invitados", label: "Invitados" },
   { href: "/#redes", id: "redes", label: "Redes" },
 ];
 
@@ -41,7 +41,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-cream/20 bg-navy-deep/95 text-cream backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:py-4">
         <Link
           href="/"
           className="flex min-w-0 items-center gap-2 sm:gap-3"
@@ -50,17 +50,17 @@ export function SiteHeader() {
           <Image
             src="/brand/ojo.png"
             alt=""
-            width={44}
-            height={28}
-            className="h-7 w-auto shrink-0"
+            width={52}
+            height={34}
+            className="h-8 w-auto shrink-0 sm:h-9"
           />
-          <span className="font-display truncate text-xs uppercase tracking-[0.16em] sm:text-sm sm:tracking-[0.22em]">
+          <span className="font-display truncate text-sm uppercase tracking-[0.16em] sm:text-base sm:tracking-[0.22em]">
             <span className="sm:hidden">Inspira Fest 2</span>
             <span className="hidden sm:inline">Inspira Impro Fest 2</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 text-sm md:flex">
+        <nav className="hidden items-center gap-8 text-base md:flex">
           {LINKS.map((link) => (
             <a
               key={link.href}
@@ -70,24 +70,18 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <Link
-            href={ticketsHref()}
-            className="rounded-sm bg-gold px-4 py-2 font-display text-xs uppercase tracking-[0.18em] text-navy-deep hover:bg-cream"
-          >
+          <Link href={ticketsHref()} className="cta-star-sm">
             Entradas
           </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
-          <Link
-            href={ticketsHref()}
-            className="rounded-sm bg-gold px-3 py-2.5 font-display text-[11px] uppercase leading-none tracking-[0.14em] text-navy-deep"
-          >
+          <Link href={ticketsHref()} className="cta-star-sm">
             Entradas
           </Link>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-cream/30"
+            className="inline-flex h-12 w-12 items-center justify-center rounded-sm border border-cream/30"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls={menuId}
@@ -146,7 +140,7 @@ export function SiteHeader() {
           <Link
             href={ticketsHref()}
             onClick={closeMenu}
-            className="mt-1 flex min-h-12 items-center justify-center rounded-sm bg-gold px-3 font-display text-sm uppercase tracking-[0.16em] text-navy-deep"
+            className="cta-star mt-1 justify-center"
           >
             Comprar entradas
           </Link>

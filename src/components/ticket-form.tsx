@@ -58,7 +58,8 @@ export function TicketForm() {
         const data = new FormData(form);
         const fields = validateTicketFields({
           name: String(data.get("name") ?? ""),
-          idPhone: String(data.get("idPhone") ?? ""),
+          phone: String(data.get("phone") ?? ""),
+          document: String(data.get("document") ?? ""),
           email: String(data.get("email") ?? ""),
           website: String(data.get("website") ?? ""),
         });
@@ -115,11 +116,26 @@ export function TicketForm() {
       </label>
 
       <label className="grid gap-1">
-        <span className="text-sm font-medium">Documento / Teléfono</span>
+        <span className="text-sm font-medium">Teléfono</span>
         <input
-          name="idPhone"
+          name="phone"
+          type="tel"
           required
           autoComplete="tel"
+          inputMode="tel"
+          suppressHydrationWarning
+          className="min-h-12 border-2 border-navy bg-paper px-3"
+        />
+      </label>
+
+      <label className="grid gap-1">
+        <span className="text-sm font-medium">
+          Documento{" "}
+          <span className="font-normal text-ink/60">(opcional)</span>
+        </span>
+        <input
+          name="document"
+          autoComplete="off"
           suppressHydrationWarning
           className="min-h-12 border-2 border-navy bg-paper px-3"
         />
@@ -183,7 +199,7 @@ export function TicketForm() {
       <button
         type="submit"
         disabled={pending}
-        className="min-h-12 rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep disabled:opacity-60"
+        className="cta-star justify-self-center disabled:opacity-60"
       >
         {pending ? "Enviando…" : "Enviar comprobante"}
       </button>
