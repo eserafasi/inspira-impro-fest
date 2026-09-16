@@ -36,8 +36,6 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
               href={ticketsHref()}
-              target="_blank"
-              rel="noreferrer"
               className="rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
             >
               Comprar entradas

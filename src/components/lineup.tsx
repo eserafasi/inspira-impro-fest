@@ -33,8 +33,6 @@ export function Lineup() {
         </p>
         <a
           href={ticketsHref()}
-          target="_blank"
-          rel="noreferrer"
           className="mt-6 inline-flex rounded-sm bg-navy px-5 py-3 font-display text-sm uppercase tracking-[0.16em] text-cream hover:bg-teal-deep"
         >
           Comprar entradas
@@ -67,8 +65,6 @@ export function Lineup() {
                 </p>
                 <a
                   href={ticketsHref(show)}
-                  target="_blank"
-                  rel="noreferrer"
                   className={`mt-5 inline-flex border px-3 py-2 font-display text-[11px] uppercase tracking-[0.14em] ${TICKET_LINK[show.tone]}`}
                 >
                   Comprar entradas

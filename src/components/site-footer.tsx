@@ -50,11 +50,9 @@ export function SiteFooter() {
           </p>
           <a
             href={ticketsHref()}
-            target="_blank"
-            rel="noreferrer"
             className="mt-2 inline-flex rounded-sm bg-gold px-4 py-2 font-display text-xs uppercase tracking-[0.16em] text-navy-deep hover:bg-cream"
           >
-            WhatsApp {WHATSAPP.tickets.display}
+            Comprar entradas
           </a>
           <p className="mt-5 font-display uppercase tracking-widest text-gold">
             Talleres

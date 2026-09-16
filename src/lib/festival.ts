@@ -26,12 +26,8 @@ export const SOCIAL = [
   },
 ] as const;
 
-export function ticketsHref(show?: { title: string; day: string }) {
-  const text = show
-    ? `Quiero comprar entradas para ${show.title} — ${show.day} del Inspira Impro Fest 2`
-    : "Quiero comprar entradas para los shows del Inspira Impro Fest 2";
-
-  return `https://wa.me/${WHATSAPP.tickets.phone}?text=${encodeURIComponent(text)}`;
+export function ticketsHref(_show?: { title: string; day: string }) {
+  return "/entradas";
 }
 
 export const SHOWS = [

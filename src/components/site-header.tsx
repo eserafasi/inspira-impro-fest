@@ -2,18 +2,21 @@
 
 import { useEffect, useId, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ticketsHref } from "@/lib/festival";
 
 const LINKS = [
-  { href: "#funciones", label: "Funciones" },
-  { href: "#talleres", label: "Talleres" },
-  { href: "#invitado", label: "Invitado" },
-  { href: "#redes", label: "Redes" },
+  { href: "/#funciones", id: "funciones", label: "Funciones" },
+  { href: "/#talleres", id: "talleres", label: "Talleres" },
+  { href: "/#invitado", id: "invitado", label: "Invitado" },
+  { href: "/#redes", id: "redes", label: "Redes" },
 ];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const menuId = useId();
+  const pathname = usePathname();
 
   const closeMenu = () => {
     document.body.style.overflow = "";
@@ -39,8 +42,8 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-cream/20 bg-navy-deep/95 text-cream backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:py-3">
-        <a
-          href="#inicio"
+        <Link
+          href="/"
           className="flex min-w-0 items-center gap-2 sm:gap-3"
           onClick={closeMenu}
         >
@@ -55,7 +58,7 @@ export function SiteHeader() {
             <span className="sm:hidden">Inspira Fest 2</span>
             <span className="hidden sm:inline">Inspira Impro Fest 2</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 text-sm md:flex">
           {LINKS.map((link) => (
@@ -67,25 +70,21 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <a
+          <Link
             href={ticketsHref()}
-            target="_blank"
-            rel="noreferrer"
             className="rounded-sm bg-gold px-4 py-2 font-display text-xs uppercase tracking-[0.18em] text-navy-deep hover:bg-cream"
           >
             Entradas
-          </a>
+          </Link>
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 md:hidden">
-          <a
+          <Link
             href={ticketsHref()}
-            target="_blank"
-            rel="noreferrer"
             className="rounded-sm bg-gold px-3 py-2.5 font-display text-[11px] uppercase leading-none tracking-[0.14em] text-navy-deep"
           >
             Entradas
-          </a>
+          </Link>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-sm border border-cream/30"
@@ -130,8 +129,8 @@ export function SiteHeader() {
               href={link.href}
               onClick={(event) => {
                 closeMenu();
-                const id = link.href.slice(1);
-                const target = document.getElementById(id);
+                if (pathname !== "/") return;
+                const target = document.getElementById(link.id);
                 if (!target) return;
                 event.preventDefault();
                 window.history.pushState(null, "", link.href);
@@ -144,15 +143,13 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <a
+          <Link
             href={ticketsHref()}
-            target="_blank"
-            rel="noreferrer"
             onClick={closeMenu}
             className="mt-1 flex min-h-12 items-center justify-center rounded-sm bg-gold px-3 font-display text-sm uppercase tracking-[0.16em] text-navy-deep"
           >
             Comprar entradas
-          </a>
+          </Link>
         </nav>
       ) : null}
     </header>
