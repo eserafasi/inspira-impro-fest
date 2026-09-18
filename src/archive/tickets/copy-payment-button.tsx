@@ -1,5 +1,6 @@
 "use client";
 
+/** ARCHIVO — botón real de copiar datos de pago. Restaurar a src/components/. */
 import { useState } from "react";
 
 export function CopyPaymentButton({ text }: { text: string }) {

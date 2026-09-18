@@ -1,3 +1,4 @@
+/** ARCHIVO — validación real de la taquilla. Restaurar a src/lib/ticket-submit.ts. */
 import { isAllowedReceiptType, RECEIPT } from "@/lib/ticket";
 
 export type TicketPayload = {

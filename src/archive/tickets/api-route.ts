@@ -1,4 +1,8 @@
-import { validateReceiptMeta, validateTicketFields } from "@/lib/ticket-submit";
+/**
+ * ARCHIVO — POST /api/tickets. Restaurar a src/app/api/tickets/route.ts
+ * y cambiar el import a @/lib/ticket-submit.
+ */
+import { validateReceiptMeta, validateTicketFields } from "./ticket-submit";
 
 export const runtime = "nodejs";
 
