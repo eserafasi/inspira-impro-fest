@@ -1,8 +1,13 @@
 "use client";
 
+/**
+ * ARCHIVO — formulario real de taquilla. No se usa en producción ahora.
+ * Restaurar: copiar a src/components/ticket-form.tsx y el import de
+ * ticket-submit a @/lib/ticket-submit (ver restore-notes.ts).
+ */
 import { useEffect, useId, useState } from "react";
 import { RECEIPT } from "@/lib/ticket";
-import { validateReceiptMeta, validateTicketFields } from "@/lib/ticket-submit";
+import { validateReceiptMeta, validateTicketFields } from "./ticket-submit";
 
 export function TicketForm() {
   const previewId = useId();
